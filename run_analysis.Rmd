@@ -11,3 +11,7 @@ download.file(url, destfile = "./data/Dataset.zip")
 Unzip the file
 --------------
 Todo
+
+Read the files
+--------------
+Todo
