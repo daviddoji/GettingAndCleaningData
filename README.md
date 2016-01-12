@@ -28,7 +28,7 @@ Parameters for the project
 
 How to reproduce this project
 -----------------------------
-TO-DO
+Todo
 
 Expected outputs
 ----------------
