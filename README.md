@@ -25,3 +25,12 @@ Parameters for the project
 > 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 > 
 > Good luck!
+
+How to reproduce this project
+-----------------------------
+TO-DO
+
+Expected outputs
+----------------
+1. Tidy dataset
+2. Code book describing variables, data and any transformations or work performed to clean up the data in the form of a Markdown document 'codebook.md'
