@@ -1,7 +1,7 @@
 Get the data
 ------------
 Download the file and store it in the `data` folder
-```{r, eval = FALSE}
+```{r, eval=FALSE}
 library(data.table)
 if(!file.exists("./data")){dir.create("./data")}
 url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
@@ -10,8 +10,15 @@ download.file(url, destfile = "./data/Dataset.zip")
 
 Unzip the file
 --------------
-Todo
+A new directory (`UCI HAR Dataset`) will be created when the file is unzipped.
+```{r, eval=FALSE}
+unzip("./data/Dataset.zip")
+```
 
 Read the files
 --------------
-Todo
+Subject files are stored in `train` and `test` folders, respectively 
+```{r, eval=FALSE}
+dtSubjectTrain <- fread("./UCI HAR Dataset/train/subject_train.txt")
+dtSubjectTest <- fread("./U/UCI HAR Dataset/test/subject_test.txt")
+```
