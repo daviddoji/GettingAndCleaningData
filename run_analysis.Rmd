@@ -22,3 +22,5 @@ Subject files are stored in `train` and `test` folders, respectively
 dtSubjectTrain <- fread("./UCI HAR Dataset/train/subject_train.txt")
 dtSubjectTest <- fread("./U/UCI HAR Dataset/test/subject_test.txt")
 ```
+
+Activity files are stored in `train` and `test` folders, respectively
