@@ -33,4 +33,4 @@ Todo
 Expected outputs
 ----------------
 1. Tidy dataset
-2. Code book describing variables, data and any transformations or work performed to clean up the data in the form of a Markdown document `codebook.md`
+2. Code book describing variables, data and any transformations or work performed to clean up the data in the form of a Markdown document `CodeBook.md`
