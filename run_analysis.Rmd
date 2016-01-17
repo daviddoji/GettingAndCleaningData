@@ -1,8 +1,16 @@
+Preliminaries
+-------------
+Load packages.
+
+```{r}
+packages <- c("data.table", "reshape2")
+sapply(packages, require, character.only=TRUE, quietly=TRUE)
+```
+
 Get the data
 ------------
 Download the file and store it in the `data` folder
 ```{r, eval=FALSE}
-library(data.table)
 if(!file.exists("./data")){dir.create("./data")}
 url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(url, destfile = "./data/Dataset.zip")
@@ -17,23 +25,111 @@ unzip("./data/Dataset.zip")
 
 Read the files
 --------------
-Subject, Labels and Data files are stored in `train` and `test` folders, respectively. A full
+Subject, Labels and Data files are stored in `train` and `test` subfolders of the `UCI HAR Dataset`, respectively. A full
 description can be found in the `README.txt` file
 ```{r, eval=FALSE}
 dtSubjectTrain <- fread("./UCI HAR Dataset/train/subject_train.txt")
-dtSubjectTest <- fread("./U/UCI HAR Dataset/test/subject_test.txt")
+dtSubjectTest <- fread("./UCI HAR Dataset/test/subject_test.txt")
 ```
 
 ```{r, eval=FALSE}
 dtActivityTrain <- fread("./UCI HAR Dataset/train/y_train.txt")
-dtActivityTest <- fread("./UCI HAR Dataset/train/y_test.txt")
+dtActivityTest <- fread("./UCI HAR Dataset/test/y_test.txt")
 ```
 
 ```{r, eval=FALSE}
 dtTrain <- fread("./UCI HAR Dataset/train/X_train.txt")
-dtActivity <- fread("./UCI HAR Dataset/train/X_test.txt")
+dtTest <- fread("./UCI HAR Dataset/test/X_test.txt")
 ```
 
 Operations
 ----------
-Todo
+Concatenate the data tables
+```{r, eval=FALSE}
+dt <- rbind(dtTrain, dtTest)
+dtSubject <- rbind(dtSubjectTrain, dtSubjectTest)
+setnames(dtSubject, "V1", "Subject")
+dtActivity <- rbind(dtActivityTrain, dtActivityTest)
+setnames(dtActivity, "V1", "ActivityNum")
+```
+
+Merge the columns in the data tables
+```{r, eval=FALSE}
+dtIndividual <- cbind(dtSubject, dtActivity)
+dtIndividualAll <- cbind(dtIndividual, dt)
+```
+
+Sort the data table by Subject
+```{r, eval=FALSE}
+setkey(dtIndividualAll, Subject, ActivityNum) ## change ActivityNum for Activity
+```
+
+Extract some data from the dataset
+----------------------------------
+In the `features.txt` file, variables corresponding to different atributes are given (e.g. mean,
+standard deviation, median, ...)
+
+```{r, eval=FALSE}
+dtFeatures <- fread("./UCI HAR Dataset/features.txt")
+setnames(dtFeatures, names(dtFeatures), c("FeatureNum", "Variables"))
+```
+
+Subset some variables
+```{r, eval=FALSE}
+## dtFeaturesSub <- dtFeatures[grep("mean\\(\\)|std\\(\\)|mad\\(\\)|max\\(\\)|min\\(\\)", Variables)]
+dtFeaturesSub <- dtFeatures[grep("(mean|std)\\(\\)", Variables)]
+```
+
+Add new column where the rows are the a vector of FeatureNum
+```{r, eval=FALSE}
+dtFeaturesSub$VariableCode <- dtFeaturesSub[, paste0("V", FeatureNum)]
+```
+
+
+Subset the variables using their variable names
+```{r, eval=FALSE}
+select <- c(key(dtIndividualAll), dtFeaturesSub$VariableCode)
+test <- dtIndividualAll[, select, with=FALSE]
+```
+Change test!!!
+
+Use descriptive names
+---------------------
+Extract descriptive names for the activities from the `activity_labels.txt` file.
+```{r, eval=FALSE}
+dtActivityNames <- fread("./UCI HAR Dataset/activity_labels.txt")
+setnames(dtActivityNames, names(dtActivityNames), c("ActivityNum", "ActivityName")) ## change ActivityNum for Activity
+```
+
+
+Label the data table with descriptive names
+-------------------------------------------
+Use descriptive names for the data table
+```{r, eval=FALSE}
+test2 <- merge(test, dtActivityNames, by="ActivityNum", all.x=TRUE) ## change ActivityNum for Activity
+```
+
+Add `ActivityName` as a key for the activities
+```{r, eval=FALSE}
+setkey(test2, Subject, ActivityNum, ActivityName) ## change ActivityNum for Activity
+```
+
+Reshape the data table
+```{r, eval=FALSE}
+test3 <- data.table(melt(test2, key(test2), variable.name="VariableCode"))
+```
+
+Merge activity name
+```{r, eval=FALSE}
+test4 <- merge(test3, dtFeaturesSub[, list(FeatureNum, VariableCode, Variables)], by="VariableCode", all.x=TRUE)
+```
+
+Create new variables `Activity` and `Variable` equivalents to `ActivityName` and `Variable` as factors
+```{r, eval=FALSE}
+test4$Activity <-factor(test4$ActivityName)
+test4$Variable <- factor(test4$Variables)
+```
+
+Separate variable from `Variables` using a helper function (grepthis)
+```{r grepthis}
+
