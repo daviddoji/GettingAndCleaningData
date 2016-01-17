@@ -1,10 +1,10 @@
-Project for Getting and Cleaning Data
-=====================================
+Project for Getting and Cleaning Data Course
+============================================
 Author: David Doblas Jiménez (https://github.com/daviddoji/GettingAndCleaningData)
 
 
-Parameters for the project
---------------------------
+Instructions
+------------
 
 > The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. You will be graded by your peers on a series of yes/no questions related to the project. You will be required to submit: 1) a tidy data set as described below, 2) a link to a Github repository with your script for performing the analysis, and 3) a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. You should also include a README.md in the repo with your scripts. This repo explains how all of the scripts work and how they are connected.  
 > 
@@ -23,14 +23,13 @@ Parameters for the project
 > 3. Uses descriptive activity names to name the activities in the data set.
 > 4. Appropriately labels the data set with descriptive activity names.
 > 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
-> 
-> Good luck!
+
 
 How to reproduce this project
 -----------------------------
-Todo
+To do
 
 Expected outputs
 ----------------
-1. Tidy dataset
-2. Code book describing variables, data and any transformations or work performed to clean up the data in the form of a Markdown document `CodeBook.md`
+1. Tidy dataset in a file named `tidyData.txt`
+2. Code book describing variables, data and any transformations or work performed to clean up the data in the form of a Markdown document named `CodeBook.md`
