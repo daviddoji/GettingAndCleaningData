@@ -40,7 +40,10 @@ How to reproduce this project
 
 > 6) Set your working directory to your GettingAndCleaningData directory.
 
-> 6) source("run_analysis.R") 
+> 6) source("run_analysis.R")
+
+> 7) The script `run_analysis.R` is extensively commented and is almost self-explanatory, 
+explaining all operations in a step-wise manner.
 
 
 
