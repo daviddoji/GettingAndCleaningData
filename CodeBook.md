@@ -4,70 +4,70 @@ Codebook
 Variable Name              | Variable Type | Description
 -------------              | ------------- | ----------- 
 Subject                    | integer       | Subject id numbers
-ActivityName               | factor        | Links the class labels with their activity name
-fBodyAccJerk-mean()-X      |
-fBodyAccJerk-mean()-Y      |
-fBodyAccJerk-mean()-Z      |
-fBodyAccJerk-std()-X       |
-fBodyAccJerk-std()-Y       |
-fBodyAccJerk-std()-Z       |
-fBodyAccMag-mean()         |
-fBodyAccMag-std()          |
-fBodyAcc-mean()-X          |
-fBodyAcc-mean()-Y          |
-fBodyAcc-mean()-Z          |
-fBodyAcc-std()-X           |
-fBodyAcc-std()-Y           |
-fBodyAcc-std()-Z           |
-fBodyBodyAccJerkMag-mean() |
-fBodyBodyAccJerkMag-std()  |
-fBodyBodyGyroJerkMag-mean()|
-fBodyBodyGyroJerkMag-std() |
-fBodyBodyGyroMag-mean()    |
-fBodyBodyGyroMag-std()     |
-fBodyGyro-mean()-X         |
-fBodyGyro-mean()-Y         |
-fBodyGyro-mean()-Z         |
-fBodyGyro-std()-X          |
-fBodyGyro-std()-Y          |
-fBodyGyro-std()-Z          |
-tBodyAccJerkMag-mean()     |
-tBodyAccJerkMag-std()      |
-tBodyAccJerk-mean()-X      |
-tBodyAccJerk-mean()-Y      |
-tBodyAccJerk-mean()-Z      |
-tBodyAccJerk-std()-X       |
-tBodyAccJerk-std()-Y       |
-tBodyAccJerk-std()-Z       |
-tBodyAccMag-mean()         |
-tBodyAccMag-std()          |
-tBodyAcc-mean()-X          |
-tBodyAcc-mean()-Y          |
-tBodyAcc-mean()-Z          |
-tBodyAcc-std()-X           |
-tBodyAcc-std()-Y           |
-tBodyAcc-std()-Z           |
-tBodyGyroJerkMag-mean()    |
-tBodyGyroJerkMag-std()     |
-tBodyGyroJerk-mean()-X     |
-tBodyGyroJerk-mean()-Y     |
-tBodyGyroJerk-mean()-Z     |
-tBodyGyroJerk-std()-X      |
-tBodyGyroJerk-std()-Y      |
-tBodyGyroJerk-std()-Z      |
-tBodyGyroMag-mean()        |
-tBodyGyroMag-std()         |
-tBodyGyro-mean()-X         |
-tBodyGyro-mean()-Y         |
-tBodyGyro-mean()-Z         |
-tBodyGyro-std()-X          |
-tBodyGyro-std()-Y          |
-tBodyGyro-std()-Z          |
-tGravityAccMag-mean()      |
-tGravityAccMag-std()       |
-tGravityAcc-mean()-X       |
-tGravityAcc-mean()-Y       |
-tGravityAcc-mean()-Z       |
-tGravityAcc-std()-X        |
-tGravityAcc-std()-Y        |
-tGravityAcc-std()-Z        |
+ActivityName               | factor        | Descriptor of activity name
+fBodyAccJerk-mean()-X      | numeric       |
+fBodyAccJerk-mean()-Y      | numeric       |
+fBodyAccJerk-mean()-Z      | numeric       |
+fBodyAccJerk-std()-X       | numeric       |
+fBodyAccJerk-std()-Y       | numeric       |
+fBodyAccJerk-std()-Z       | numeric       |
+fBodyAccMag-mean()         | numeric       |
+fBodyAccMag-std()          | numeric       |
+fBodyAcc-mean()-X          | numeric       |
+fBodyAcc-mean()-Y          | numeric       |
+fBodyAcc-mean()-Z          | numeric       |
+fBodyAcc-std()-X           | numeric       |
+fBodyAcc-std()-Y           | numeric       |
+fBodyAcc-std()-Z           | numeric       |
+fBodyBodyAccJerkMag-mean() | numeric       |
+fBodyBodyAccJerkMag-std()  | numeric       |
+fBodyBodyGyroJerkMag-mean()| numeric       |
+fBodyBodyGyroJerkMag-std() | numeric       |
+fBodyBodyGyroMag-mean()    | numeric       |
+fBodyBodyGyroMag-std()     | numeric       |
+fBodyGyro-mean()-X         | numeric       |
+fBodyGyro-mean()-Y         | numeric       |
+fBodyGyro-mean()-Z         | numeric       |
+fBodyGyro-std()-X          | numeric       |
+fBodyGyro-std()-Y          | numeric       |
+fBodyGyro-std()-Z          | numeric       |
+tBodyAccJerkMag-mean()     | numeric       |
+tBodyAccJerkMag-std()      | numeric       |
+tBodyAccJerk-mean()-X      | numeric       |
+tBodyAccJerk-mean()-Y      | numeric       |
+tBodyAccJerk-mean()-Z      | numeric       |
+tBodyAccJerk-std()-X       | numeric       |
+tBodyAccJerk-std()-Y       | numeric       |
+tBodyAccJerk-std()-Z       | numeric       |
+tBodyAccMag-mean()         | numeric       |
+tBodyAccMag-std()          | numeric       |
+tBodyAcc-mean()-X          | numeric       |
+tBodyAcc-mean()-Y          | numeric       |
+tBodyAcc-mean()-Z          | numeric       |
+tBodyAcc-std()-X           | numeric       |
+tBodyAcc-std()-Y           | numeric       |
+tBodyAcc-std()-Z           | numeric       |
+tBodyGyroJerkMag-mean()    | numeric       |
+tBodyGyroJerkMag-std()     | numeric       |
+tBodyGyroJerk-mean()-X     | numeric       |
+tBodyGyroJerk-mean()-Y     | numeric       |
+tBodyGyroJerk-mean()-Z     | numeric       |
+tBodyGyroJerk-std()-X      | numeric       |
+tBodyGyroJerk-std()-Y      | numeric       |
+tBodyGyroJerk-std()-Z      | numeric       |
+tBodyGyroMag-mean()        | numeric       |
+tBodyGyroMag-std()         | numeric       |
+tBodyGyro-mean()-X         | numeric       |
+tBodyGyro-mean()-Y         | numeric       |
+tBodyGyro-mean()-Z         | numeric       |
+tBodyGyro-std()-X          | numeric       |
+tBodyGyro-std()-Y          | numeric       |
+tBodyGyro-std()-Z          | numeric       |
+tGravityAccMag-mean()      | numeric       |
+tGravityAccMag-std()       | numeric       |
+tGravityAcc-mean()-X       | numeric       |
+tGravityAcc-mean()-Y       | numeric       |
+tGravityAcc-mean()-Z       | numeric       |
+tGravityAcc-std()-X        | numeric       |
+tGravityAcc-std()-Y        | numeric       |
+tGravityAcc-std()-Z        | numeric       |
