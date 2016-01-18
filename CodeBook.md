@@ -1,11 +1,20 @@
 Codebook
 ========
+* Meaning of the variable names
+-------------------------------
+- Prefix `f` and `t` denote frequency or time domain signals, respectively.
+- Acceleration signal was then separated into `BodyAcc` and `GravityAcc` signals, respectively.
+- Body linear acceleration and angular velocity were derived in time to obtain `BodyAccJerk` and `BodyGyroJerk` signals, respectively.
+- The magnitude of the previous signals were calculated using the Euclidean norm to obtain `tBodyAccMag`, `tGravityAccMag`, `tBodyAccJerkMag`, `tBodyGyroMag` and `tBodyGyroJerkMag` signals.
+- Fast Fourier Transform (FFT) was applied to some of these signals producing `fBodyAcc`, `fBodyAccJerk`, `fBodyGyro`, `fBodyAccJerkMag`, `fBodyGyroMag` and `fBodyGyroJerkMag` signals.
+
+
 
 Variable Name              | Variable Type | Description
 -------------              | ------------- | ----------- 
 Subject                    | integer       | Subject id numbers
 ActivityName               | factor        | Descriptor of activity name
-fBodyAccJerk-mean()-X      | numeric       | * See below
+fBodyAccJerk-mean()-X      | numeric       | * See above
 fBodyAccJerk-mean()-Y      | numeric       |
 fBodyAccJerk-mean()-Z      | numeric       |
 fBodyAccJerk-std()-X       | numeric       |
@@ -71,12 +80,3 @@ tGravityAcc-mean()-Z       | numeric       |
 tGravityAcc-std()-X        | numeric       |
 tGravityAcc-std()-Y        | numeric       |
 tGravityAcc-std()-Z        | numeric       |
-
-
-* Meaning of the variable names
--------------------------------
-- Prefix `f` and `t` denote frequency or time domain signals, respectively.
-- Acceleration signal was then separated into `BodyAcc` and `GravityAcc` signals, respectively.
-- Body linear acceleration and angular velocity were derived in time to obtain `BodyAccJerk` and `BodyGyroJerk` signals, respectively.
-- The magnitude of the previous signals were calculated using the Euclidean norm to obtain `tBodyAccMag`, `tGravityAccMag`, `tBodyAccJerkMag`, `tBodyGyroMag` and `tBodyGyroJerkMag` signals.
-- Fast Fourier Transform (FFT) was applied to some of these signals producing `fBodyAcc`, `fBodyAccJerk`, `fBodyGyro`, `fBodyAccJerkMag`, `fBodyGyroMag` and `fBodyGyroJerkMag` signals.
