@@ -12,14 +12,15 @@ sapply(packages, require, character.only=TRUE, quietly=TRUE)
 
 
 # Get the data from the source:
-# A `data` folder will be created and the zip file will be stored
+# A `data` folder will be created and the zip file will be saved
 if(!file.exists("./data")){dir.create("./data")}
 url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(url, destfile = "./data/Dataset.zip")
 
 
 # Unzip the file:
-# A new directory named `UCI HAR Dataset` will be created when the file is unzipped. 
+# A new directory named `UCI HAR Dataset` will be created in your working directory 
+# when the file is unzipped. 
 unzip("./data/Dataset.zip")
 
 
@@ -118,4 +119,3 @@ measureAverages <- dcast(dtIndividualAllMeanStd,
 
 # Write the tab delimited file
 write.table(measureAverages, file="./tidyData.txt", row.name=FALSE, sep = "\t")
-
