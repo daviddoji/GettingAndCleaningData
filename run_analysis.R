@@ -114,7 +114,7 @@ dtIndividualAllMeanStd$MeasurementName <- factor(dtIndividualAllMeanStd$Measurem
 measureAverages <- dcast(dtIndividualAllMeanStd, 
                           Subject + ActivityName ~ MeasurementName, 
                           mean, 
-                          value.var="value")
+                          value.var="Value")
 
 # Write the tab delimited file
 write.table(measureAverages, file="./tidyData.txt", row.name=FALSE, sep = "\t")
